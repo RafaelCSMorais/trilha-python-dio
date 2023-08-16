@@ -1,0 +1,61 @@
+account = [0,]
+users = {
+    "07016643638": {"Name": " ",},
+}
+
+## def check_out_cpf(cpf):
+    ##global users
+   
+
+  
+def data_insert(cpf):
+        global users
+        print("========== Obrigado por nos escolher. ==========\n")
+        print("Por favor preencha com o seus dados.\n")
+        nome = input("Nome:\n")
+        data_Nascimento = input("\nData de nascimento:\n")
+        endereço = input("\nLogradouro:\n")+(", ")
+        endereço += input("\nNúmero:\n")+("- ")
+        endereço += input("\nBairro:\n")+("- ")
+        endereço += input("\nCidade/Estado:\n")
+        return (nome,data_Nascimento, endereço)
+
+
+print("========== BEM VINDO ===========\n")
+print("=================================\n")
+cpf = str(input("Por favor informe seu CPF: \n"))
+print("=================================\n\n")
+registered = cpf in users
+print(registered)
+
+if registered:
+    nome = users["cpf"]["Name"]
+    print(nome)
+    print(f"Olá,{nome}")
+    print("Deseja acessar sua conta:?\n")
+    ##opcao = int(input("Digite [1] Sim\n[2]NÃO \n"))
+    if opcao == 1:
+        print("vamos chamar a função")
+    else:
+        print("Sessão encerrada, Obrigado!")
+        ##break
+
+else:
+    print("= CPF não cadastrado.=")
+    print("Deseja se cadastrar:?\n")
+    opcao = int(input("Digite:\n[1] Sim\n[2] NÃO \n"))
+    if opcao == 1:
+        users.update({"cpf": {"Nome":"", "Telefone":"",}})
+        data_insert(cpf)
+    else:
+        print("Sessão encerrada, Obrigado!")
+        ##break
+
+
+
+
+
+##print(f"{users}\n")
+
+
+
